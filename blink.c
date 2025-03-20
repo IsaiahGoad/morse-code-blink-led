@@ -17,18 +17,26 @@
 void initialize_led()
 {
     // Code to initialize gpio port for LED
+    if(wiringXSetup("milkv_duo", NULL) == -1) {
+        // Release resources if there's an error
+        // during intialization.
+        wiringXGC();
+        return -1;
+    }
 }
 
 // 2.) Write code to turn led on
 void turn_on_led()
 {
     // Code to turn on the LED
+    digitalWrite(DUO_LED, HIGH);
 }
 
 // 3.) Write code to turn led off
 void turn_off_led()
 {
     // Code to turn off the LED
+    digitalWrite(DUO_LED, LOW);
 }
 #endif
 
