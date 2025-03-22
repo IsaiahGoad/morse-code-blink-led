@@ -37,7 +37,14 @@ void test_NumericInput(void)
 {
     // Fill in test code
     // use test_AlphabeticInput as example
-    TEST_FAIL(); // Remove after updating test
+    char output[100] = {0};
+    encode_morse("1809", output, sizeof(output) - 1);
+
+    // hello
+    const char *expected = ".... . .-.. .-.. ---";
+
+    TEST_ASSERT_EQUAL_STRING(expected, output);
+    //TEST_FAIL(); // Remove after updating test
 }
 
 // Test function for mixed alphanumeric input
@@ -45,7 +52,14 @@ void test_MixedAlphanumericInput(void)
 {
     // Fill in test code
     // use test_AlphabeticInput as example
-    TEST_FAIL(); // Remove after updating test
+    char output[100] = {0};
+    encode_morse("b47m4n", output, sizeof(output) - 1);
+
+    // hello
+    const char *expected = ".... . .-.. .-.. ---";
+
+    TEST_ASSERT_EQUAL_STRING(expected, output);
+    //TEST_FAIL(); // Remove after updating test
 }
 
 // Test function for mixed case input
@@ -53,7 +67,14 @@ void test_MixedCaseAlphanumericInput(void)
 {
     // Fill in test code
     // use test_AlphabeticInput as example
-    TEST_FAIL(); // Remove after updating test
+    char output[100] = {0};
+    encode_morse("L8g4nD13S", output, sizeof(output) - 1);
+
+    // hello
+    const char *expected = ".... . .-.. .-.. ---";
+
+    TEST_ASSERT_EQUAL_STRING(expected, output);
+    //TEST_FAIL(); // Remove after updating test
 }
 
 // Test function for words with spaces
@@ -61,7 +82,14 @@ void test_CanHandleSpacesInWords(void)
 {
     // Fill in test code
     // use test_AlphabeticInput as example
-    TEST_FAIL(); // Remove after updating test
+    char output[100] = {0};
+    encode_morse("Crazy I was crazy once They locked me in a room A rubber room A rubber room with rats And rats make me crazy Crazy I was crazy once", output, sizeof(output) - 1);
+
+    // hello
+    const char *expected = ".... . .-.. .-.. ---";
+
+    TEST_ASSERT_EQUAL_STRING(expected, output);
+    //TEST_FAIL(); // Remove after updating test
 }
 
 // Test function for non-representable binary data
