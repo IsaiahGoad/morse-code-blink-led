@@ -61,29 +61,25 @@ void morse_blink_led(char *morse_code)
     //LED_LOW();
 for (int i; i < strlen(mose_code); i++)
 {
-    if (morse_code[i] == '.'))
+    if (morse_code[i] == '.') //this if statement provide the led blink and delay for fots
     {
         LED_HIGH();
         DELAY(1);
         LED_LOW();
     }
-    if (morse_code[i] == '-')
+    if (morse_code[i] == '-') // if statement provide led blink and delay for dashes
     {
         LED_HIGH();
         DELAY(3);
         LED_LOW();
     }
-    if (morse_code[i] == ' ')
-    {
-        LED_HIGH();
-        DELAY(1);
-        LED_LOW():
+    if (morse_code[i] == ' ') // provide delay for moving to different letters
+    { 
+        DELAY(1); 
     }
-    else
+    else // provide delay for going to a different word
     {
-        LED_HIGH();
         DELAY(7);
-        LED_LOW(): 
     }
 }
     // Use DELAY(duration) to sleep the appropriate units
