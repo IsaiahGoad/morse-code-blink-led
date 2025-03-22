@@ -73,21 +73,21 @@ for (int i; i < strlen(mose_code); i++)
         DELAY(3);
         LED_LOW();
     }
-    if (morse_code[i] == ' ') // provide delay for moving to different letters
+    if (morse_code[i] == '/') // provide delay for going to a different word
     { 
-        DELAY(1); 
+        DELAY(7); 
     }
-    else // provide delay for going to a different word
+    else // provide delay for moving to different letters
     {
-        DELAY(7);
+        DELAY(1);
     }
 }
     // Use DELAY(duration) to sleep the appropriate units
     // By default 1 Unit = 0.1 seconds
     // Example:
-    DELAY(1); // This will add a delay of 1 unit = 0.1 seconds
-    DELAY(3); // This will add a delay of 3 unit = 0.3 seconds
-    DELAY(7); // This will add a delay of 7 unit = 0.7 seconds
+   // DELAY(1); // This will add a delay of 1 unit = 0.1 seconds
+    //DELAY(3); // This will add a delay of 3 unit = 0.3 seconds
+    //DELAY(7); // This will add a delay of 7 unit = 0.7 seconds
 }
 
 #if defined(TEST)
