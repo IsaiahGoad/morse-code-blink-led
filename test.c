@@ -83,7 +83,7 @@ void test_CanHandleSpacesInWords(void)
     // Fill in test code
     // use test_AlphabeticInput as example
     char output[100] = {0};
-    encode_morse("Crazy I was crazy once They locked me in a room A rubber room A rubber room with rats And rats make me crazy Crazy I was crazy once", output, sizeof(output) - 1);
+    encode_morse("Crazy I was crazy once They locked me in a room A rubber room A rubber room with rats And rats make me crazy", output, sizeof(output) - 1);
 
     // hello
     const char *expected = ".... . .-.. .-.. ---";
