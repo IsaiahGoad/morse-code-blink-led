@@ -40,6 +40,7 @@ void initialize_led()
 void turn_on_led()
 {
     // Code to turn on the LED
+    printf("Duo LED GPIO (wiringX) %d: High\n", DUO_LED);
     digitalWrite(DUO_LED, HIGH);
 }
 
@@ -47,7 +48,8 @@ void turn_on_led()
 void turn_off_led()
 {
     // Code to turn off the LED
-    digitalWrite(DUO_LED, LOW);
+    printf("Duo LED GPIO (wiringX) %d: Low\n", DUO_LED);
+        digitalWrite(DUO_LED, LOW);
 }
 #endif
 
