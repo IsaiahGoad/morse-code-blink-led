@@ -23,6 +23,17 @@ void initialize_led()
         wiringXGC();
         return -1;
     }
+    // Verify the pin is available
+    if(wiringXValidGPIO(DUO_LED) != 0) {
+        printf("Invalid GPIO %d\n", DUO_LED);
+        wiringXGC();
+        return -1;
+    }
+
+
+    // Initialize the GPIO pin as PINMODE_OUTPUT
+    pinMode(DUO_LED, PINMODE_OUTPUT);
+
 }
 
 // 2.) Write code to turn led on
@@ -46,9 +57,35 @@ void morse_blink_led(char *morse_code)
     // Blink LED based on the timing needed
     // Use LED_HIGH() to turn on led
     // Use LED_LOW() to turn off led
-    LED_HIGH();
-    LED_LOW();
-
+    //LED_HIGH();
+    //LED_LOW();
+for (int i; i < strlen(mose_code); i++)
+{
+    if (morse_code[i] == '.'))
+    {
+        LED_HIGH();
+        DELAY(1);
+        LED_LOW();
+    }
+    if (morse_code[i] == '-')
+    {
+        LED_HIGH();
+        DELAY(3);
+        LED_LOW();
+    }
+    if (morse_code[i] == ' ')
+    {
+        LED_HIGH();
+        DELAY(1);
+        LED_LOW():
+    }
+    else
+    {
+        LED_HIGH();
+        DELAY(7);
+        LED_LOW(): 
+    }
+}
     // Use DELAY(duration) to sleep the appropriate units
     // By default 1 Unit = 0.1 seconds
     // Example:
