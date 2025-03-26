@@ -1,0 +1,3 @@
+/home/isaiah2/Projects/morse-code-blink-led/build_host/CMakeFiles/test.dir
+/home/isaiah2/Projects/morse-code-blink-led/build_host/CMakeFiles/edit_cache.dir
+/home/isaiah2/Projects/morse-code-blink-led/build_host/CMakeFiles/rebuild_cache.dir
