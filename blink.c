@@ -81,7 +81,7 @@ for (int i; i < strlen(mose_code); i++)
     }
     else // provide delay for moving to different letters
     {
-        DELAY(1);
+        DELAY(3);
     }
 }
     // Use DELAY(duration) to sleep the appropriate units
