@@ -68,12 +68,28 @@ for (int i; i < strlen(mose_code); i++)
         LED_HIGH();
         DELAY(1);
         LED_LOW();
+        if(morse_code[i+1] == '.')
+        {
+            DELAY(1);
+        }
+        if(morse_code[i+1] ==  '-')
+        {
+            DELAY(1);
+        }
     }
     if (morse_code[i] == '-') // if statement provide led blink and delay for dashes
     {
         LED_HIGH();
         DELAY(3);
         LED_LOW();
+        if(morse_code[i+1] == '.')
+        {
+            DELAY(1);
+        }
+        if(morse_code[i+1] ==  '-')
+        {
+            DELAY(1);
+        }
     }
     if (morse_code[i] == '/') // provide delay for going to a different word
     { 
