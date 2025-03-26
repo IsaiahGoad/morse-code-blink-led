@@ -43,7 +43,7 @@ void encode_morse(const char *text, char *morse_output, int morse_output_size)
             // Insert "/ " for word separation
             if (len + 2 < morse_output_size)
             {
-                strcat(morse_output, "/ ");
+                strcat(morse_output, "/");
                 len += 2;
             }
             continue;
