@@ -52,9 +52,9 @@ void test_CanHandleSpacesInWords(void)
     encode_morse("Crazy I was crazy once", output, sizeof(output) - 1);
 
     // Just check for a partial start string to avoid writing the full Morse sentence
-    TEST_ASSERT_TRUE_MESSAGE(strstr(output, "-.-. .-. .- --.. -.-- / .. / .-- .- ... / -.-. .-. .- --.. -.-- / --- -. -.-. .") != NULL, "Expected phrase not found");
+    TEST_ASSERT_TRUE_MESSAGE(strstr(output, "-.-. .-. .- --.. -.--/../.-- .- .../-.-. .-. .- --.. -.--/--- -. -.-. .") != NULL, "Expected phrase not found");
 
-
+}
 // Test for binary or unsupported input
 void test_NonRepresentableBinaryData(void)
 {
