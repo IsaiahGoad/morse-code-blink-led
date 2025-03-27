@@ -32,30 +32,32 @@ const char *char_to_morse(char c)
 void encode_morse(const char *text, char *morse_output, int morse_output_size)
 {
     morse_output[0] = '\0'; // Start with empty string
-    char string[] = '\0'
     int len = 0;
 
     for (int i = 0; text[i] != '\0'; ++i)
     {
         char c = tolower(text[i]);
-        char string[] = '\0'
+
+        if (c == ' ')
+        {
+            // Insert "/ " for word separation
+            if (len + 2 < morse_output_size)
+            {
+                strcat(morse_output, "/");
+                len += 2;
+            }
+            continue;
+        }
+
         const char *morse = char_to_morse(c);
         int morse_len = strlen(morse);
 
         if (morse[0] != '\0' && len + morse_len + 1 < morse_output_size)
         {
-            strcat(string, morse);
-            strcat(string, " ");
+            strcat(morse_output, morse);
+            strcat(morse_output, " ");
             len += morse_len + 1;
         }
-        
-        char* token = strtok(morse_output, "  ");
-        while (token != NULL)
-        {
-                strcat(morse_output, strcat(token,"/"));
-        }
-
-    
         else if (len + morse_len + 1 >= morse_output_size)
         {
             // Stop if buffer limit is reached
