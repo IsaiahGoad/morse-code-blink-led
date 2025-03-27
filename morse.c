@@ -71,7 +71,7 @@ void encode_morse(const char *text, char *morse_output, int morse_output_size)
     {
         morse_output[output_len - 1] = '\0';
     }
-    replacesubstring(morse_output, " /", "/")
+    replacesubstring(morse_output, " /", "/");
 }
 
 void replacesubstring(char *morse_output, const char *input, const char *output)

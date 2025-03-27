@@ -61,7 +61,7 @@ void morse_blink_led(char *morse_code)
     // Use LED_LOW() to turn off led
     //LED_HIGH();
     //LED_LOW();
-for (int i; i < strlen(mose_code); i++)
+for (int i; i < strlen(morse_code); i++)
 {
     if (morse_code[i] == '.') //this if statement provide the led blink and delay for fots
     {
