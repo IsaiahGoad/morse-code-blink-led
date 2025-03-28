@@ -43,7 +43,7 @@ void encode_morse(const char *text, char *morse_output, int morse_output_size)
             // Insert "/ " for word separation
             if (len + 2 < morse_output_size)
             {
-                strcat(morse_output, "/");
+                strcat(morse_output, "/ ");
                 len += 2;
             }
             continue;
@@ -71,28 +71,7 @@ void encode_morse(const char *text, char *morse_output, int morse_output_size)
     {
         morse_output[output_len - 1] = '\0';
     }
-    replacesubstring(morse_output, " /", "/");
+    
 }
 
-void replacesubstring(char *morse_output, const char *input, const char *output)
-{
-char buffer[1024];
-char *pos, *start = morse_output;
-int inputlen = strlen(input);
-int outplen = strlen(output);
 
-
-buffer[0] = '\0';
-while ((pos = strstr(start, input) ) != NULL)
-{
-
-    strncat(buffer, start,pos - start);
-
-    strcat(buffer, output);
-
-    start = pos + inputlen;
-}
-strcat(buffer, start);
-
-strcpy(morse_output, buffer);
-}
