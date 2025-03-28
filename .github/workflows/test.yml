@@ -1,0 +1,28 @@
+name: Build and Run Unity Tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout source code
+      uses: actions/checkout@v3
+
+    - name: Install dependencies
+      run: sudo apt-get update && sudo apt-get install -y build-essential cmake
+
+    - name: Configure CMake with TEST flag
+      run: |
+        mkdir -p build_host
+        cd build_host
+        cmake -DCMAKE_BUILD_TYPE=TEST ..
+
+    - name: Build project
+      run: cd build_host && make
+
+    - name: Run Unit Tests
+      run: ./build_host/test
