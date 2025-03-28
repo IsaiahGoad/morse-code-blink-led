@@ -17,7 +17,8 @@ jobs:
 
     - name: Configure CMake with TEST flag
       run: |
-        mkdir -p build_host
+        rm -rf build_host         # 💥 This line fixes the CMake cache issue
+        mkdir build_host
         cd build_host
         cmake -DCMAKE_BUILD_TYPE=TEST ..
 
