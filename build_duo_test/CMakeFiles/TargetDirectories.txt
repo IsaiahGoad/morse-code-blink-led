@@ -1,3 +1,0 @@
-/app/build_duo_test/CMakeFiles/test.dir
-/app/build_duo_test/CMakeFiles/edit_cache.dir
-/app/build_duo_test/CMakeFiles/rebuild_cache.dir

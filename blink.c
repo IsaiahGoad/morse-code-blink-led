@@ -2,7 +2,6 @@
 #include <string.h>
 #include "blink.h"
 #include "delay.h"
-
 #if !defined(TEST)
 // Leave this header here
 
@@ -11,7 +10,7 @@
 // 2.) set the led to high
 // 3.) set the led to low
 // 4.) parse morse string
-
+int DUO_LED = 25;
 // 1.) Write code to enable led
 void initialize_led()
 {
@@ -22,13 +21,13 @@ void initialize_led()
         // Release resources if there's an error
         // during intialization.
         wiringXGC();
-        return -1;
+        return ;
     }
     // Verify the pin is available
     if(wiringXValidGPIO(DUO_LED) != 0) {
         printf("Invalid GPIO %d\n", DUO_LED);
         wiringXGC();
-        return -1;
+        return ;
     }
 
 
