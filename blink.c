@@ -5,7 +5,6 @@
 
 #if !defined(TEST)
 // Leave this header here
-#include "wiringx.h"
 
 // Fill in the four functions
 // 1.) enable the output mode for onboard LED
@@ -17,7 +16,9 @@
 void initialize_led()
 {
     // Code to initialize gpio port for LED
-    if(wiringXSetup("milkv_duo", NULL) == -1) {
+    wiringXSetup("milkv_duo", NULL);
+    if(wiringXSetup("milkv_duo", NULL) == -1)
+     {
         // Release resources if there's an error
         // during intialization.
         wiringXGC();
