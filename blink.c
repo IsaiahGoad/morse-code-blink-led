@@ -1,5 +1,5 @@
 #include <stdio.h>
-
+#include <string.h>
 #include "blink.h"
 #include "delay.h"
 
@@ -53,6 +53,28 @@ void turn_off_led()
 }
 #endif
 
+void replacesubstring(char *morse_code, const char *input, const char *output)
+{
+char buffer[1024];
+char *pos, *start = morse_code;
+int inputlen = strlen(input);
+int outplen = strlen(output);
+
+
+buffer[0] = '\0';
+while ((pos = strstr(start, input) ) != NULL)
+{
+
+    strncat(buffer, start,pos - start);
+
+    strcat(buffer, output);
+
+    start = pos + inputlen;
+}
+strcat(buffer, start);
+
+strcpy(morse_code, buffer);
+}
 // 4.) Parse the morse string
 void morse_blink_led(char *morse_code)
 {
@@ -108,29 +130,6 @@ for (int i; i < strlen(morse_code); i++)
    // DELAY(1); // This will add a delay of 1 unit = 0.1 seconds
     //DELAY(3); // This will add a delay of 3 unit = 0.3 seconds
     //DELAY(7); // This will add a delay of 7 unit = 0.7 seconds
-}
-
-void replacesubstring(char *morse_code, const char *input, const char *output)
-{
-char buffer[1024];
-char *pos, *start = morse_code;
-int inputlen = strlen(input);
-int outplen = strlen(output);
-
-
-buffer[0] = '\0';
-while ((pos = strstr(start, input) ) != NULL)
-{
-
-    strncat(buffer, start,pos - start);
-
-    strcat(buffer, output);
-
-    start = pos + inputlen;
-}
-strcat(buffer, start);
-
-strcpy(morse_code, buffer);
 }
 
 #if defined(TEST)

@@ -1,5 +1,4 @@
 #include "delay.h"
-
 // Nothing to modify here
 // This allows our test code to use our DELAY macro
 // As long as we're not in release or debug mode

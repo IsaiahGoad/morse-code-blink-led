@@ -1,3 +1,4 @@
+#include <string.h>
 #include "unity.h"
 #include "delay.h"
 #include "morse.h"
