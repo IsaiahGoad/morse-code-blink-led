@@ -97,10 +97,10 @@ int main(void)
     RUN_TEST(test_MixedCaseAlphanumericInput);
     RUN_TEST(test_NonRepresentableBinaryData);
 
-//#if defined(TEST)
-//    RUN_TEST(test_MorseTiming);
-//    RUN_TEST(test_MorseTimingMultipleWords);  // Bonus test enabled
-//#endif
+#if defined(TEST)
+    RUN_TEST(test_MorseTiming);
+   RUN_TEST(test_MorseTimingMultipleWords);  // Bonus test enabled
+#endif
 
     return UNITY_END();
 }

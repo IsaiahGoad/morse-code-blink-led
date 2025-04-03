@@ -84,9 +84,12 @@ void morse_blink_led(char *morse_code)
     // Use LED_LOW() to turn off led
     //LED_HIGH();
     //LED_LOW();
-for (int i; i < strlen(morse_code); i++)
-{
     replacesubstring(morse_code, " / ", "/");
+    replacesubstring(morse_code, " ", "s");
+   
+for (int i = 0; i < strlen(morse_code); i++)
+{
+    
     if (morse_code[i] == '.') //this if statement provide the led blink and delay for fots
     {
         LED_HIGH();
@@ -119,9 +122,10 @@ for (int i; i < strlen(morse_code); i++)
     { 
         DELAY(7); 
     }
-    else // provide delay for moving to different letters
-    {
-        DELAY(3);
+   
+    if (morse_code[i] == 's') // provide delay for going to a different letter
+    { 
+        DELAY(3); 
     }
 }
     // Use DELAY(duration) to sleep the appropriate units
