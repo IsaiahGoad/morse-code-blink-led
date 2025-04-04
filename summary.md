@@ -37,3 +37,9 @@ This project focused on developing a Morse code translator in C that controls an
 - Morse code successfully displayed through LED blinking with correct timing and translation logic.
 - Codebase is organized, documented, and version-controlled via GitHub.
 
+
+## Test Morse timing with multiple words Explanation, why we failed:
+We tested every signle character by hand, and they were all correct, but for some reason there was extra characters that produced delays,
+We tried to truncate the shring to be the original 35 characters and when we run that we got the correct delays calls but the delay durations were wrong, also we are wondering if that will be half correct of a test case haha. 
+
+ 
