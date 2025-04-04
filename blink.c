@@ -79,7 +79,15 @@ strcat(buffer, start);
 
 strcpy(morse_code, buffer);
 }
+// truncate the string because for some reason theres extra characters
+void truncate_string(char *str, size_t length) {
+    size_t current_length = strlen(str);
 
+    // Only truncate if the string is longer than the desired length
+    if (current_length > length) {
+        str[length] = '\0';  // Null-terminate the string at the desired length
+    }
+}
 // 4.) Parse the morse string
 void morse_blink_led(char *morse_code)
 {
@@ -93,6 +101,7 @@ void morse_blink_led(char *morse_code)
     //replace the forward slash in to have no spaces and replace the single spaces with s
     replacesubstring(morse_code, " / ", "/");
     replacesubstring(morse_code, " ", "s");
+    truncate_string(morse_code, 34);
 for (int i = 0; i < 34; i++)
 {
     if (morse_code[i] == '.') //this if statement provide the led blink and delay for fots
