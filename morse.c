@@ -8,6 +8,7 @@
 
 // Maps a single alphanumeric character to its Morse code representation.
 // Returns a pointer to a static Morse code string, or an empty string for unsupported characters.
+
 const char *char_to_morse(char c)
 {
     // Morse code for letters A-Z and digits 0-9

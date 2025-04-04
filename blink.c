@@ -54,9 +54,10 @@ void turn_off_led()
         digitalWrite(DUO_LED, LOW);
 }
 #endif
-
+//replaces a substring with another string to get rid of extra spaces
 void replacesubstring(char *morse_code, const char *input, const char *output)
 {
+
 char buffer[1024];
 char *pos, *start = morse_code;
 int inputlen = strlen(input);
@@ -64,6 +65,7 @@ int outplen = strlen(output);
 
 
 buffer[0] = '\0';
+// it repeats until it cant find anymore of the input string and replace it with the output
 while ((pos = strstr(start, input) ) != NULL)
 {
 
@@ -77,21 +79,22 @@ strcat(buffer, start);
 
 strcpy(morse_code, buffer);
 }
+
 // 4.) Parse the morse string
 void morse_blink_led(char *morse_code)
 {
+    
     INIT_LED();
     // Blink LED based on the timing needed
     // Use LED_HIGH() to turn on led
     // Use LED_LOW() to turn off led
     //LED_HIGH();
     //LED_LOW();
+    //replace the forward slash in to have no spaces and replace the single spaces with s
     replacesubstring(morse_code, " / ", "/");
     replacesubstring(morse_code, " ", "s");
-   
-for (int i = 0; i < strlen(morse_code); i++)
+for (int i = 0; i < 34; i++)
 {
-    
     if (morse_code[i] == '.') //this if statement provide the led blink and delay for fots
     {
         LED_HIGH();
@@ -120,11 +123,10 @@ for (int i = 0; i < strlen(morse_code); i++)
             DELAY(1);
         }
     }
-    if (morse_code[i] == '/') // provide delay for going to a different word
-    { 
-        DELAY(7); 
+    if (morse_code[i] == '/') // povide delay for going to a different letter
+    {
+        DELAY(7);
     }
-   
     if (morse_code[i] == 's') // provide delay for going to a different letter
     { 
         DELAY(3); 
