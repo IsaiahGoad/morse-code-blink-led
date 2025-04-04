@@ -76,7 +76,7 @@ void test_MorseTiming(void)
     TEST_ASSERT_EQUAL(27, mock_delay_duration);
 }
 
-#if 0
+
 //Test Morse timing with multiple words //failed):
  void test_MorseTimingMultipleWords(void)
 {
@@ -87,7 +87,7 @@ void test_MorseTiming(void)
     TEST_ASSERT_EQUAL(51, mock_delay_called);       // Estimate based on total blink steps
     TEST_ASSERT_EQUAL(87, mock_delay_duration);     // Estimate based on timing units
 } 
-#endif 
+
 
 int main(void)
 {
@@ -100,8 +100,8 @@ int main(void)
     RUN_TEST(test_NonRepresentableBinaryData);
 
 #if defined(TEST)
-    RUN_TEST(test_MorseTiming);
-   RUN_TEST(test_MorseTimingMultipleWords);  // Bonus test enabled
+   RUN_TEST(test_MorseTiming); // Bonus test enabled
+   RUN_TEST(test_MorseTimingMultipleWords); // This test is disabled due to failure                          
 #endif
 
     return UNITY_END();
