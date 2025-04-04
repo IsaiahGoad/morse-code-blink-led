@@ -15,7 +15,9 @@ int DUO_LED = 25;
 void initialize_led()
 {
     // Code to initialize gpio port for LED
+    // setup wiringx
     wiringXSetup("milkv_duo", NULL);
+    //check to see if its wiring prints if its wrong
     if(wiringXSetup("milkv_duo", NULL) == -1)
      {
         // Release resources if there's an error
